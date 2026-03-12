@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Manajemen KTP</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fa-regular fa-id-card"></i> Sistem Manajemen KTP</h1>
+            <p>Kelola data Kartu Tanda Penduduk dengan mudah dan efisien.</p>
+        </header>
+
+        <main>
+            <div class="glass-panel form-section">
+                <h2 id="formTitle">Tambah Data KTP</h2>
+                <form id="ktpForm">
+                    <input type="hidden" id="ktpId">
+                    
+                    <div class="form-group">
+                        <label for="nomorKtp">Nomor KTP (NIK)</label>
+                        <input type="text" id="nomorKtp" name="nomorKtp" placeholder="Masukkan 16 digit NIK" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="namaLengkap">Nama Lengkap</label>
+                        <input type="text" id="namaLengkap" name="namaLengkap" placeholder="Nama Lengkap" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat">Alamat</label>
+                        <textarea id="alamat" name="alamat" rows="2" placeholder="Alamat Lengkap"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="tanggalLahir">Tanggal Lahir</label>
+                            <input type="date" id="tanggalLahir" name="tanggalLahir" required>
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="jenisKelamin">Jenis Kelamin</label>
+                            <select id="jenisKelamin" name="jenisKelamin" required>
+                                <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                                <option value="Laki-Laki">Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="btnCancel" class="btn btn-secondary" style="display: none;">Batal</button>
+                        <button type="submit" id="btnSubmit" class="btn btn-primary">Simpan Data</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="glass-panel table-section">
+                <h2>Daftar KTP</h2>
+                <div class="table-container">
+                    <table id="ktpTable">
+                        <thead>
+                            <tr>
+                                <th>No KTP</th>
+                                <th>Nama Lengkap</th>
+                                <th>Tanggal Lahir</th>
+                                <th>J. Kelamin</th>
+                                <th>Alamat</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ktpTableBody">
+                            <!-- Data KTP will be injected here via AJAX -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="loadingIndicator" class="loading" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Memuat data...
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
