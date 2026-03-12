@@ -56,4 +56,4 @@ Tampilan Sistem Manajemen KTP:
 
 ---
 **NIM**: 20230140148
-**Nama**: Syandy Arda
+**Nama**: Syandy Arda Syahnuari
