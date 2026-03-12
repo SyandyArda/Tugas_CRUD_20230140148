@@ -14,5 +14,6 @@ public interface KtpMapper {
 
     Ktp toEntity(KtpDto ktpDto);
 
+    @org.mapstruct.Mapping(target = "id", ignore = true)
     void updateEntityFromDto(KtpDto ktpDto, @MappingTarget Ktp ktp);
 }
